@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemowebApplication<demoweb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.web.demoweb.DemowebApplication",
+            "projectName": "demoweb",
+            "args": ""
+        }
+    ]
+}
