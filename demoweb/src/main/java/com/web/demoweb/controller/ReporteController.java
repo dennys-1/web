@@ -24,14 +24,14 @@ public class ReporteController {
         this.resourceLoader = resourceLoader;
     }
     
-    @GetMapping("/jasper/repventas")
-    public void generateReporteVentas(HttpServletResponse response)  {
+    @GetMapping("/jasper/repegresado")
+    public void generateReporteEgresado(HttpServletResponse response)  {
         response.setContentType("application/x-download");
         response.setHeader("Content-Disposition", 
-            String.format("attachment; filename=\"ventas.pdf\""));
+            String.format("attachment; filename=\"egresados.pdf\""));
         try {
             OutputStream out = response.getOutputStream();
-            Resource resource = resourceLoader.getResource("classpath:./reports/RepVentas.jrxml");
+            Resource resource = resourceLoader.getResource("classpath:./reports/RepEgresdado.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(resource.getInputStream());
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, 
                     jdbcTemplate.getDataSource().getConnection());
